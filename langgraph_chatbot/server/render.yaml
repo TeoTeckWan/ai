@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: zus-api-server
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python fastapi_server.py
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: PRODUCT_INDEX_PATH
+        sync: false
+      - key: PRODUCT_METADATA_PATH
+        sync: false
+    healthCheckPath: /health
