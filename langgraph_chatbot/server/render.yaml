@@ -4,8 +4,8 @@ services:
     env: python
     region: singapore
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python fastapi_server.py
+    buildCommand: pip install -r server/requirements.txt
+    startCommand: python server/fastapi_server.py
     envVars:
       - key: OPENAI_API_KEY
         sync: false
@@ -13,4 +13,5 @@ services:
         sync: false
       - key: PRODUCT_METADATA_PATH
         sync: false
+
     healthCheckPath: /health
