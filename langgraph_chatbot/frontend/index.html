@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZUS Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="header-left">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" 
+                                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h1 class="chat-title">ZUS Chatbot</h1>
+                        <p class="chat-subtitle">Interactive AI with Tool Calling & Planning</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="reset-button" id="resetBtn">Reset</button>
+            </div>
+        </header>
+
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcomeScreen">
+            <div class="welcome-content">
+                <div class="welcome-logo">
+                    <div class="logo-icon large">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" 
+                                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="welcome-title">Welcome to ZUS Chatbot</h2>
+                <p class="welcome-description">
+                    Try asking me to calculate something, search for products, or find outlet locations. 
+                    I'll show you my thinking process and tool usage!
+                </p>
+                <div class="quick-actions">
+                    <button class="quick-action-btn" data-action="Calculate 15 * 23 + 100">Calculate 15 * 23 + 100</button>
+                    <button class="quick-action-btn" data-action="Search for drinkware">Search for products</button>
+                    <button class="quick-action-btn" data-action="Find outlets in KL">Find outlets in KL</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div class="messages-container" id="messagesContainer">
+            <!-- Messages will be dynamically inserted here -->
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <div class="autocomplete-suggestions" id="autocompleteSuggestions"></div>
+            <div class="input-wrapper">
+                <textarea id="messageInput" class="message-input" placeholder="Type a message... (/ for commands)" rows="1"></textarea>
+                <button class="send-button" id="sendBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="input-hint">
+                Press <kbd>Enter</kbd> to send, <kbd>Shift + Enter</kbd> for new line
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
