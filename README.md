@@ -71,7 +71,7 @@ PRODUCT_METADATA_PATH=data/products_metadata.pkl
 
 ```bash
 # Install dependencies
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 
 ```
 
